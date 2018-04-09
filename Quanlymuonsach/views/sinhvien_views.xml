@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+      <record model="ir.ui.view" id="sinhvien_tree_view">
+          <field name="name">sinhvien list </field>
+          <field name="model">quanlymuonsach.sinhvien</field>
+          <field name="arch" type="xml">
+              <tree editable="top">
+                  <field name="sv_id" string ="ID" />
+                  <field name="ten_sv" string="Name" />
+              </tree>
+           </field>
+      </record>
+
+
+    <record id="sinhvien_action" model="ir.actions.act_window">
+        <field name="name">sinhvien.lits</field>
+        <field name="res_model">quanlymuonsach.sinhvien</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <menuitem name="quanlymuonsach" id="quanlymuonsach_menu_root"/>
+
+     <menuitem name="sinvien" id="sinhvien_menu_root" parent="quanlymuonsach_menu_root" action="sinhvien_action"/>
+  </data>
+</odoo>

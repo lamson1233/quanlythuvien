@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="quanlymuon_tree_view">
+            <field name="name">quanlymuon list </field>
+            <field name="model">quanlymuonsach.muonsach</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ngaymuon" string ="Ngay muon" />
+                    <field name="ngaytra" string ="Ngay tra" />
+                    <field name="sv_id" string ="Sinh vien muon" />
+                    <field name="sach_ids" string ="Sach duoc muon" />
+                    <field name="soluong" string ="So luong" />
+                    <field name="vipham" string="Vi pham"/>
+                    <field name="sosachmuon" string="So sach da muon"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="quanlymuon_action" model="ir.actions.act_window">
+            <field name="name">muonsach.lits</field>
+            <field name="res_model">quanlymuonsach.muonsach</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Muon sach" id="quanlymuon_menu_root" parent="quanlymuonsach_menu_root" action="quanlymuon_action"/>
+
+    </data>
+</odoo>

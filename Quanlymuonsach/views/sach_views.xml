@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sach_tree_view">
+            <field name="name">sach list </field>
+            <field name="model">quanlymuonsach.sach</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="sach_id" string ="ID" />
+                    <field name="ten_sach" string="Name" />
+                    <field name="sate" string="Trang thai"/>
+                    <field name="ngay_tra" string="Ngay tra sach"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sach_action" model="ir.actions.act_window">
+            <field name="name">sach.lits</field>
+            <field name="res_model">quanlymuonsach.sach</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="sach" id="sach_menu_root" parent="quanlymuonsach_menu_root" action="sach_action"/>
+    </data>
+</odoo>
+
